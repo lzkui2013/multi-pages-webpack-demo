@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "methods": [
+        "src/public/methods"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "src/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
