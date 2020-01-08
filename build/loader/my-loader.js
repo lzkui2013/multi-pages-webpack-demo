@@ -17,6 +17,8 @@ module.exports = function (source) {
     let fileName = path.basename(resourcePath);
     let extname = path.extname(resourcePath);
 
+    // console.log(`resourcePath: ${resourcePath}`);
+    // console.log(`resourceQuery: ${resourceQuery}`);
     if (extname === '.vue') {
         if (type === 'template') {
             fs.outputFileSync(`${dir}/${fileName}.template.js`, templateLoader.bind(loaderContext)(source));

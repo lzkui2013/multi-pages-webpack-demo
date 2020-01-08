@@ -90,8 +90,8 @@ async function getDep (buildType) {
             await doRealWebpack(realWebpackEntry);
             outPutTime('线上项目真实构建');
 
-            shelljs.exec('git clean -df', {silent: true});
-            outPutTime('清除本地生成的无效文件');
+            // shelljs.exec('git clean -df', {silent: true});
+            // outPutTime('清除本地生成的无效文件');
 
             let {imgLen, cssLen, jsLen, allLen} = await doUploadStaticFilesToAliOss(rootPath, isDealImg);
             outPutTime(`上传【${imgLen}】个图片【${cssLen}】个css【${jsLen}】个js共${allLen}文件到阿里oss上`);
