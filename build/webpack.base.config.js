@@ -75,7 +75,7 @@ module.exports = {
             threadPool: happyThreadPool,
             verbose: false,
             loaders: [
-                'css-loader', 'postcss-loader', 'sass-loader'
+                'css-loader', 'postcss-loader', 'resolve-url-loader', 'sass-loader'
             ]
         }),
         new HappyPack({

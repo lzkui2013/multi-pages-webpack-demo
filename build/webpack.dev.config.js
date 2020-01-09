@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
     entry: entryAndHtml.entry,
     output: {
         publicPath: '/',
-        filename: 'js/[name].js',
+        filename: 'js/[name]-[hash:8].js',
         path: path.resolve(__dirname, '../dist/')
     },
     devtool: '#cheap-module-source-map' ,

@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ['my-loader-for-vue-scss', 'css-loader', 'my-loader'],
+                loader: ['my-loader-for-vue-scss', 'css-loader', 'my-loader', 'resolve-url-loader'],
                 include: [srcPath],
             },
 

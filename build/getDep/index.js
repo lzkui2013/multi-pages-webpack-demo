@@ -24,7 +24,7 @@ const doRealWebpack = require('./doRealWebpack');
 const {pauseBuild, outPutTime} = require('./utils');
 const beginTime = Date.now();
 const rootPath = path.resolve(__dirname, '../../');
-const outPutPath = path.resolve(__dirname, '../../../sxx_h5_node');
+const outPutPath = path.resolve(__dirname, '../../../outPutPath');
 
 async function getDep (buildType) {
     try {
@@ -54,7 +54,6 @@ async function getDep (buildType) {
             // 根据修改文件中src目录的下的修改，获取需要使用获取依赖的webpack入口
             let {lenObj, scssFilesArr, jsFilesArr, vueFilesArr, htmlFilesArr} = await getAllEntry(srcPathArr, beforeCommitHash);
             outPutTime(`获取本地所有文件【${lenObj.all}】个；scss【${lenObj.scss}】个；js【${lenObj.js}】个；html【${lenObj.html}】个；vue【${lenObj.vue}】个`);
-
             // 执行文件拆分
             if (buildType === 'webpack') {
                 await doDepWebpack([...scssFilesArr, ...vueFilesArr, ...htmlFilesArr]);
@@ -90,8 +89,8 @@ async function getDep (buildType) {
             await doRealWebpack(realWebpackEntry);
             outPutTime('线上项目真实构建');
 
-            // shelljs.exec('git clean -df', {silent: true});
-            // outPutTime('清除本地生成的无效文件');
+            shelljs.exec('git clean -df', {silent: true});
+            outPutTime('清除本地生成的无效文件');
 
             let {imgLen, cssLen, jsLen, allLen} = await doUploadStaticFilesToAliOss(rootPath, isDealImg);
             outPutTime(`上传【${imgLen}】个图片【${cssLen}】个css【${jsLen}】个js共${allLen}文件到阿里oss上`);

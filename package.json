@@ -11,6 +11,7 @@
     "demo"
   ],
   "scripts": {
+    "dev": "npx webpack --config ./build/webpack.dev.config.js",
     "build:1": "node ./build type=webpack",
     "build:2": "node ./build"
   },
@@ -83,6 +84,7 @@
     "postcss-loader": "^2.0.6",
     "querystring": "^0.2.0",
     "recursive-readdir": "^2.2.2",
+    "resolve-url-loader": "^3.1.1",
     "sass-graph": "^3.0.4",
     "sass-loader": "^6.0.6",
     "shelljs": "^0.8.3",
