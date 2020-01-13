@@ -9,6 +9,7 @@ function FakeWebpack () {
     this.sourceMap = false;
     this.rootContext = '';
     this.resourcePath = '';
+    // 参数需要与webpack配置的一致
     this.query = '?{"attrs":["img:src","img:srcset"]}';
 }
 

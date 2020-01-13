@@ -8,8 +8,8 @@
 </template>
 
 <script>
-    import TestCom from 'components/VueComponent2';
-    import request from 'src/public/methods/request';
+    // import TestCom from 'components/VueComponent2';
+    // import request from 'src/public/methods/request';
     export default {
         data () {
             return {

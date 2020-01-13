@@ -17,15 +17,18 @@ module.exports = function (source) {
     let fileName = path.basename(resourcePath);
     let extname = path.extname(resourcePath);
 
-    // console.log(`resourcePath: ${resourcePath}`);
-    // console.log(`resourceQuery: ${resourceQuery}`);
+    console.log(source);
+    console.log('====================================================================================');
     if (extname === '.vue') {
         if (type === 'template') {
-            fs.outputFileSync(`${dir}/${fileName}.template.js`, templateLoader.bind(loaderContext)(source));
+            fs.outputFileSync(`${dir}/${fileName}.js`, source);
+            // fs.outputFileSync(`${dir}/${fileName}.template.js`, templateLoader.bind(loaderContext)(source));
         } else if (type === 'style') {
             fs.outputFileSync(`${dir}/${fileName}.style.scss`, source);
         } else if (type === 'script') {
             fs.outputFileSync(`${dir}/${fileName}.script.js`, source);
+        } else {
+            fs.outputFileSync(`${dir}/${fileName}.else.js`, source);
         }
     } else {
         fs.outputFileSync(`${dir}/${fileName}.js`, source);

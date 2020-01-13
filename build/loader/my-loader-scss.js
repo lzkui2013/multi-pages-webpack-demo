@@ -7,8 +7,6 @@ module.exports = function (source) {
     let dir = path.dirname(resourcePath);
     let fileName = path.basename(resourcePath);
 
-    // console.log(`resourcePath: ${resourcePath}`);
-    // console.log(`dir: ${dir}; fileName: ${fileName}`);
     if (/\.vue$/.test(resourcePath)) {
         fs.outputFileSync(`${dir}/${fileName}.style.scss.js`, source);
     } else {

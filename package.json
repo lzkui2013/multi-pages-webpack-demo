@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "dev": "npx webpack --config ./build/webpack.dev.config.js",
+    "dep": "npx webpack --config ./build/webpack.dep.config.js",
     "build:1": "node ./build type=webpack",
     "build:2": "node ./build"
   },

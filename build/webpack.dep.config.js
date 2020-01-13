@@ -7,6 +7,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const srcPath = path.resolve(__dirname, '../src');
 
 module.exports = {
+    entry: {
+        index: path.resolve(__dirname, '../src/public/components/VueComponent1/index.vue')
+    },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
         alias: require('./alias.js')
@@ -26,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ['my-loader-for-vue-scss', 'css-loader', 'my-loader', 'resolve-url-loader'],
+                loader: ['my-loader-scss', 'css-loader', 'resolve-url-loader'],
                 include: [srcPath],
             },
 
