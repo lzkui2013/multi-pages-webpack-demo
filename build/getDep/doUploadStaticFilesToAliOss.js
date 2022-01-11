@@ -1,6 +1,9 @@
 module.exports = () => {
-    // done
-    return {
-        imgLen: '*', cssLen: '*', jsLen: '*', allLen: '*'
-    };
-}
+  // done
+  return {
+    imgLen: '*',
+    cssLen: '*',
+    jsLen: '*',
+    allLen: '*',
+  };
+};
