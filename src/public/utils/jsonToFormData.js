@@ -1,5 +1,3 @@
-import isArray from './isArray';
-
 function isObject(value) {
   const type = typeof value;
   return value != null && (type === 'object' || type === 'function');
@@ -31,7 +29,7 @@ const processData = (value, options, formData, parent) => {
     return;
   }
 
-  if (isArray(value)) {
+  if (Array.isArray(value)) {
     value.forEach((item, index) => {
       const computedKey = `${processedKey}[${options.arrayIndexes ? index : ''}]`;
       processData(item, options, formData, computedKey);
