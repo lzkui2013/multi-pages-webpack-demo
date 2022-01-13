@@ -25,7 +25,7 @@ const beginTime = Date.now();
 const rootPath = path.resolve(__dirname, '../../');
 const outPutPath = path.resolve(__dirname, '../../../outPutPath');
 
-async function getDep(buildType) {
+async function getDep() {
   try {
     // 获取本地保留的依赖
     let localDepency = await getLocalDepency();
@@ -90,8 +90,8 @@ async function getDep(buildType) {
       await doRealWebpack(realWebpackEntry);
       outPutTime('线上项目真实构建');
 
-      // shelljs.exec('git clean -df', { silent: true });
-      // outPutTime('清除本地生成的无效文件');
+      shelljs.exec('git clean -df', { silent: true });
+      outPutTime('清除本地生成的无效文件');
 
       let { imgLen, cssLen, jsLen, allLen } = await doUploadStaticFilesToAliOss(
         rootPath,
@@ -101,8 +101,9 @@ async function getDep(buildType) {
         `上传【${imgLen}】个图片【${cssLen}】个css【${jsLen}】个js共${allLen}文件到阿里oss上`
       );
 
+      // demo 不做本地依赖更新
       // await setLocalDepency(newDepencyGraph, commitHash);
-      // outPutTime('更新本地依赖json文件');
+      outPutTime('更新本地依赖json文件');
     } else {
       await setLocalDepency(localDepency, commitHash);
       outPutTime('更新本地commitHash');
