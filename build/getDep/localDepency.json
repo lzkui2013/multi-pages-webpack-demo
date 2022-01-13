@@ -1,5 +1,5 @@
 {
-  "commitHash": "af89960450b6da11695323d9d61fc1ed7b138018",
+  "commitHash": "44642962d7721ef534c6a28518c2d15012d2996d",
   "depency": {
     "src/public/components/VueComponent1/index.vue": [
       "src/public/components/VueComponent2/index.vue",

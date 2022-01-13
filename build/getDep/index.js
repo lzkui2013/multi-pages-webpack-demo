@@ -105,7 +105,8 @@ async function getDep() {
       // await setLocalDepency(newDepencyGraph, commitHash);
       outPutTime('更新本地依赖json文件');
     } else {
-      await setLocalDepency(localDepency, commitHash);
+      // demo 不做本地依赖更新
+      // await setLocalDepency(localDepency, commitHash);
       outPutTime('更新本地commitHash');
       outPutTime('不需要处理src文件夹', undefined, 'blue');
     }
