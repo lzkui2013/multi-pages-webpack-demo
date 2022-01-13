@@ -23,6 +23,7 @@ module.exports = (scssFilesArr, jsFilesArr, vueFilesArr, htmlFilesArr) => {
     setArrFunc(`${fileI}.script.js`);
     setArrFunc(`${fileI}.template.js`);
     setArrFunc(`${fileI}.style.scss`);
+    setArrFunc(`${fileI}.style.scss.js`);
   }
   fileArr = fileArr.concat(jsFilesArr);
   return fileArr;

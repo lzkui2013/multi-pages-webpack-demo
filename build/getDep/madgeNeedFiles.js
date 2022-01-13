@@ -38,7 +38,7 @@ module.exports = (allNeedFiles, srcArrOrigin, beforeCommitHash) => {
           let nowIndex = srcArr && srcArr.indexOf(keyReal);
           let fileName = path.basename(key);
           let dir = path.dirname(key);
-          let vueRegExp = /\.vue\.((template|script|style)\.js|style.scss)$/;
+          let vueRegExp = /\.vue\.((template|script|style)\.js|style.scss((\.js)?))$/;
           let scssRegExp = /\.scss\.js$/;
           let htmlRegExp = /\.html\.js$/;
 
@@ -76,6 +76,8 @@ module.exports = (allNeedFiles, srcArrOrigin, beforeCommitHash) => {
         } else {
           outPutObj = obj;
         }
+        res.tree = outPutObj;
+        res.image(path.resolve(__dirname, '../dist/image.svg'));
         resolve(outPutObj);
       })
       .catch((e) => {

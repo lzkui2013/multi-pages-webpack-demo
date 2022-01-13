@@ -61,14 +61,9 @@ async function getDep(buildType) {
         `获取本地所有文件【${lenObj.all}】个；scss【${lenObj.scss}】个；js【${lenObj.js}】个；html【${lenObj.html}】个；vue【${lenObj.vue}】个`
       );
       // 执行文件拆分
-      if (buildType === 'webpack') {
-        await doDepWebpack([...scssFilesArr, ...vueFilesArr, ...htmlFilesArr]);
-        outPutTime('使用webpack将文件拆分处理');
-      } else {
-        await Promise.all([doDealHtmlFiles(htmlFilesArr), doUnpackVueFiles(vueFilesArr)]);
-        await doDealScssFiles(scssFilesArr, vueFilesArr);
-        outPutTime('使用nodejs+loader将文件拆分处理');
-      }
+      await Promise.all([doDealHtmlFiles(htmlFilesArr), doUnpackVueFiles(vueFilesArr)]);
+      await doDealScssFiles(scssFilesArr, vueFilesArr);
+      outPutTime('使用nodejs+loader将文件拆分处理');
 
       // 获取需要madge去拿到依赖的所有文件
       let allNeedFiles = getAllNeedFiles(scssFilesArr, jsFilesArr, vueFilesArr, htmlFilesArr);
@@ -95,8 +90,8 @@ async function getDep(buildType) {
       await doRealWebpack(realWebpackEntry);
       outPutTime('线上项目真实构建');
 
-      shelljs.exec('git clean -df', { silent: true });
-      outPutTime('清除本地生成的无效文件');
+      // shelljs.exec('git clean -df', { silent: true });
+      // outPutTime('清除本地生成的无效文件');
 
       let { imgLen, cssLen, jsLen, allLen } = await doUploadStaticFilesToAliOss(
         rootPath,

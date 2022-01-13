@@ -1,10 +1,9 @@
-
 import jsonToFormData from './jsonToFormData';
 
-function getAjaxData (obj) {
-    let params = jsonToFormData(obj);
+function getAjaxData(obj) {
+  let params = jsonToFormData(obj);
 
-    return params;
+  return params;
 }
 
 export default getAjaxData;

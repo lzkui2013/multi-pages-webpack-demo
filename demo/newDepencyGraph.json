@@ -1,11 +1,15 @@
 {
-  "commitHash": "aefd0d4d0dc80bded6023580a902c4a22bee5443",
+  "commitHash": "503948d9019c13b699a57337091f7559ff14862e",
   "depency": {
     "src/public/components/VueComponent1/index.vue": [
       "src/public/components/VueComponent2/index.vue",
       "src/public/methods/request.js",
       "src/public/css/dosome.scss",
+      "src/public/components/VueComponent1/css-bg.jpg",
       "src/public/components/VueComponent1/some.jpg"
+    ],
+    "src/public/components/VueComponent2/index.vue": [
+      "src/public/images/cat.jpg"
     ],
     "src/public/css/dosome.scss": [
       "src/public/images/cat.jpg"
@@ -19,32 +23,68 @@
     "src/public/utils/getAjaxData.js": [
       "src/public/utils/jsonToFormData.js"
     ],
-    "src/views/some/page1.html": [
-      "src/views/some/images/aa.jpg"
+    "src/views/folder1/page1.html": [
+      "src/views/folder1/images/aa.jpg"
     ],
-    "src/views/some/page1.js": [
-      "src/views/some/page1.scss",
-      "src/views/some/page1.vue",
-      "src/views/some/page1.js",
-      "src/views/some/page1.html"
+    "src/views/folder1/page1.js": [
+      "src/views/folder1/page1.scss",
+      "src/views/folder1/page1.vue",
+      "src/views/folder1/page1.js",
+      "src/views/folder1/page1.html"
     ],
-    "src/views/some/page1.scss": [
+    "src/views/folder1/page1.scss": [
       "src/public/css/public.scss",
-      "src/views/some/images/tes.jpg"
+      "src/views/folder1/images/tes.jpg"
     ],
-    "src/views/some1/index.html": [],
-    "src/views/some1/index.js": [
+    "src/views/folder2/page2.html": [],
+    "src/views/folder2/page2.js": [
       "src/public/components/VueComponent2/index.vue",
-      "src/views/some1/index.js",
-      "src/views/some1/index.html"
+      "src/public/methods/request.js",
+      "src/views/folder2/page2.js",
+      "src/views/folder2/page2.html"
     ],
-    "src/views/some2/index.html": [
+    "src/views/folder3/page3.html": [
       "src/public/images/cat.jpg"
     ],
-    "src/views/some2/index.js": [
-      "src/views/some2/index.scss",
-      "src/views/some2/index.js",
-      "src/views/some2/index.html"
+    "src/views/folder3/page3.js": [
+      "src/public/methods/request.js",
+      "src/views/folder3/page3.scss",
+      "src/views/folder3/page3.js",
+      "src/views/folder3/page3.html"
+    ],
+    "src/views/folder4/page4.html": [
+      "src/public/images/cat.jpg"
+    ],
+    "src/views/folder4/page4.js": [
+      "src/public/methods/request.js",
+      "src/views/folder4/page4.scss",
+      "src/views/folder4/page4.js",
+      "src/views/folder4/page4.html"
+    ],
+    "src/views/folder5/page5.html": [
+      "src/public/images/cat.jpg"
+    ],
+    "src/views/folder5/page5.js": [
+      "src/public/components/VueComponent1/index.vue",
+      "src/public/images/cat.jpg",
+      "src/public/methods/request.js",
+      "src/views/folder1/page1.scss",
+      "src/views/folder5/page5.scss",
+      "src/views/folder5/page5.js",
+      "src/views/folder5/page5.html"
+    ],
+    "src/views/folder6/page6.html": [
+      "src/public/images/cat.jpg"
+    ],
+    "src/views/folder6/page6.js": [
+      "src/public/images/cat.jpg",
+      "src/public/methods/request.js",
+      "src/views/folder6/page6.scss",
+      "src/views/folder6/page6.js",
+      "src/views/folder6/page6.html"
+    ],
+    "src/views/folder6/page6.scss": [
+      "src/public/css/some.css"
     ]
   }
 }
